@@ -14,6 +14,7 @@
           <p><%= msg.text %></p>
           <p><%= msg.user %></p>
           <p><%= msg.added %></p>
+          <a href="/detail/<%= encodeURIComponent(msg.id) %>">Open</a>
         </article>
         <% }) %>
       </section>
