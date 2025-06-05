@@ -6,6 +6,17 @@
     <title>Message Board</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <main>
+      <h1>Message Board</h1>
+      <section>
+        <% messages.forEach(msg => { %>
+        <article>
+          <p><%= msg.text %></p>
+          <p><%= msg.user %></p>
+          <p><%= msg.added %></p>
+        </article>
+        <% }) %>
+      </section>
+    </main>
   </body>
 </html>
