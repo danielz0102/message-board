@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.content {
+  align-self: center;
+}
+
+.link {
+  width: fit-content;
+}

@@ -4,19 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message Board</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body>
     <main>
       <h1>Message Board</h1>
       <section>
-        <% messages.forEach(msg => { %>
-        <article>
-          <p><%= msg.text %></p>
-          <p><%= msg.user %></p>
-          <p><%= msg.added %></p>
-          <a href="/detail/<%= encodeURIComponent(msg.id) %>">Open</a>
-        </article>
-        <% }) %>
+        <div class="messages">
+          <% messages.forEach(msg => { %>
+          <article class="msg">
+            <small class="username"><%= msg.user %></small>
+            <p><%= msg.text %></p>
+            <small class="date"
+              ><%= msg.added.toLocaleString('en-US', { month: 'long', day:
+              'numeric', year: 'numeric' }) %></small
+            >
+            <a
+              aria-label="View message details"
+              class="floating-link"
+              href="/detail/<%= encodeURIComponent(msg.id) %>"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M16 4l4 0l0 4" />
+                <path d="M14 10l6 -6" />
+                <path d="M8 20l-4 0l0 -4" />
+                <path d="M4 20l6 -6" /></svg
+            ></a>
+          </article>
+          <% }) %>
+        </div>
+        <a href="/new" class="link"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-message"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M8 9h8" />
+            <path d="M8 13h6" />
+            <path
+              d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"
+            /></svg
+          >Send a message</a
+        >
       </section>
     </main>
   </body>

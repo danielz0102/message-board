@@ -4,23 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message Board | Message Detail</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/detail.css" />
   </head>
   <body>
     <main>
       <h1>Message Detail</h1>
-      <p>
-        <strong>User:</strong>
-        <%= msg.user %>
-      </p>
-      <p>
-        <strong>Message:</strong>
-        <%= msg.text %>
-      </p>
-      <p>
-        <strong>Added:</strong>
-        <%= msg.added %>
-      </p>
-      <a href="/">Back to messages</a>
+      <div class="content">
+        <p>
+          <strong>User:</strong>
+          <%= msg.user %>
+        </p>
+        <p>
+          <strong>Message:</strong>
+          <%= msg.text %>
+        </p>
+        <p>
+          <strong>Added:</strong>
+          <%= msg.added.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) %>
+        </p>
+      </div>
+      <a href="/" class="link"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M5 12l14 0" />
+          <path d="M5 12l6 6" />
+          <path d="M5 12l6 -6" /></svg
+        >Back to messages</a
+      >
     </main>
   </body>
 </html>

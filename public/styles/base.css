@@ -1,0 +1,23 @@
+body {
+  font-family: system-ui;
+  background-color: #363636;
+  color: #fff;
+  height: 100dvh;
+}
+
+.link {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}

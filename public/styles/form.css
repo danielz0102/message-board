@@ -1,0 +1,61 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input,
+textarea {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  color: #000;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+
+  & > div:first-child {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.btn {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #fff;
+  background-color: #000;
+  padding: 4px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.btn--secondary {
+  background-color: #b3b1b1;
+  color: #000;
+  text-decoration: none;
+}
