@@ -18,8 +18,7 @@
             <small class="username"><%= msg.username %></small>
             <p><%= msg.text %></p>
             <small class="date"
-              ><%= msg.added.toLocaleString('en-US', { month: 'long', day:
-              'numeric', year: 'numeric' }) %></small
+              ><%= msg.added.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }) %></small
             >
             <a
               aria-label="View message details"
