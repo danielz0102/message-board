@@ -15,7 +15,7 @@
         <div class="messages">
           <% messages.forEach(msg => { %>
           <article class="msg">
-            <small class="username"><%= msg.user %></small>
+            <small class="username"><%= msg.username %></small>
             <p><%= msg.text %></p>
             <small class="date"
               ><%= msg.added.toLocaleString('en-US', { month: 'long', day:

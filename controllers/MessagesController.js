@@ -1,20 +1,8 @@
-const messages = [
-  {
-    id: crypto.randomUUID(),
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    id: crypto.randomUUID(),
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-];
+import MessagesModel from "../models/MessagesModel.js";
 
 class MessagesController {
-  getAllMessages(req, res) {
+  async getAllMessages(req, res) {
+    const messages = await MessagesModel.getAllMessages();
     res.render("index", { messages });
   }
 
@@ -22,9 +10,9 @@ class MessagesController {
     res.render("form");
   }
 
-  getMessageDetail(req, res) {
+  async getMessageDetail(req, res) {
     const { id } = req.params;
-    const msg = messages.find((message) => message.id === id);
+    const msg = await MessagesModel.getMessageById(id);
 
     if (!msg) {
       return res.status(404).send("Message not found");
@@ -33,9 +21,9 @@ class MessagesController {
     res.render("detail", { msg });
   }
 
-  createNewMessage(req, res) {
-    const { user, text } = req.body;
-    messages.push({ id: crypto.randomUUID(), user, text, added: new Date() });
+  async createNewMessage(req, res) {
+    const { username, text } = req.body;
+    await MessagesModel.createMessage({ username, text });
     res.redirect("/");
   }
 }
